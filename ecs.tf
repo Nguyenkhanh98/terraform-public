@@ -3,7 +3,7 @@ resource "aws_ecs_cluster" "public_cluster" {
 }
 
 resource "aws_ecs_capacity_provider" "public_provider" {
-  name = "primary-provider"
+  name = "public-provider"
 
   auto_scaling_group_provider {
     auto_scaling_group_arn = aws_autoscaling_group.public_ecs_asg.arn
