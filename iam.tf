@@ -15,7 +15,7 @@ name  = "ecs-public-instance-role"
   })
 }
 resource "aws_iam_instance_profile" "ecs_instance_profile" {
-  name = "ecs-instance-profile"
+  name = "public-ecs-instance-profile"
   role = aws_iam_role.ecs_instance_role[0].name 
 }
 
@@ -48,7 +48,7 @@ resource "aws_iam_policy_attachment" "ecs_task_execution_policy" {
 }
 
 resource "aws_iam_policy" "ecs_public_secrets_policy" {
-  name        = "ecs-secrets-access"
+  name        = "public-ecs-secrets-access"
   description = "Allow ECS to access Secrets Manager"
   policy = jsonencode({
     Version = "2012-10-17"

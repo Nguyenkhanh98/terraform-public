@@ -1,5 +1,5 @@
 resource "aws_lb" "onair_alb" {
-  name               = "primary-alb"
+  name               = "public-alb"
   internal           = false
   load_balancer_type = "application"
   security_groups    = [var.alb_sg_id]
