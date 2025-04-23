@@ -66,5 +66,5 @@ resource "aws_iam_policy" "ecs_public_secrets_policy" {
 resource "aws_iam_policy_attachment" "ecs_task_secrets" {
   name       = "ecs-task-secrets-attach"
   roles      = [aws_iam_role.ecs_task_execution_role.name]
-  policy_arn = aws_iam_policy.ecs_secrets_policy.arn
+  policy_arn = aws_iam_policy.ecs_public_secrets_policy.arn
 }
