@@ -42,7 +42,7 @@ resource "aws_lb_listener_rule" "onair_admin_https_rule" {
   condition {
     host_header {
       values = ["admin.onair.today"]
-    } s
+    } 
   }
 
   action {
