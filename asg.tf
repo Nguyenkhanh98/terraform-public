@@ -39,7 +39,7 @@ EOF
 
   network_interfaces {
     associate_public_ip_address = false
-    security_groups             = [aws_security_group.ecs_sg.id]
+    security_groups             = [aws_security_group.public_ecs_sg.id]
   }
 }
 
