@@ -10,6 +10,18 @@ variable "vpc_id" {
   description = "The ID of the VPC"
   type        = string
 }
+variable onair_https_listener_arn {
+  description = "The ARN of the HTTPS listener for the ALB"
+  type        = string
+  default     = "arn:aws:elasticloadbalancing:ap-southeast-1:123456789012:listener/app/onair-alb/1234567890abcdef/1234567890abcdef"
+}
+
+variable "onair_http_listener_arn" {
+  description = "The ARN of the HTTP listener for the ALB"
+  type        = string
+  default     = "arn:aws:elasticloadbalancing:ap-southeast-1:123456789012:listener/app/onair-alb/1234567890abcdef/1234567890abcdef"
+}
+
 
 variable "subnet_ids" {
   description = "A list of subnet IDs"

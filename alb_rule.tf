@@ -1,6 +1,6 @@
 
 resource "aws_lb_listener_rule" "onair_fe_https_rule" {
-  listener_arn = aws_lb_listener.onair_https_listener.arn
+  listener_arn = var.onair_https_listener_arn
   priority     = 1
 
 
@@ -18,7 +18,7 @@ resource "aws_lb_listener_rule" "onair_fe_https_rule" {
 
 
 resource "aws_lb_listener_rule" "onair_host_https_rule" {
-  listener_arn = aws_lb_listener.onair_https_listener.arn
+  listener_arn = var.onair_https_listener_arn
   priority     = 30
 
   condition {
@@ -36,13 +36,13 @@ resource "aws_lb_listener_rule" "onair_host_https_rule" {
 
 
 resource "aws_lb_listener_rule" "onair_admin_https_rule" {
-  listener_arn = aws_lb_listener.onair_https_listener.arn
+  listener_arn = var.onair_https_listener_arn
   priority     = 2
 
   condition {
     host_header {
       values = ["admin.onair.today"]
-    }
+    } s
   }
 
   action {
